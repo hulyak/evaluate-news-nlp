@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Test</title>
+    <title>Evaluate a News Article with Natural Language Processing</title>
 
 </head>
 
@@ -11,10 +11,10 @@
 
     <header>
         <div class="">
-            Logo
+            Udacity
         </div>
         <div class="">
-            navigation
+            Evaluate A News Article with NLP
         </div>
     </header>
 
@@ -36,7 +36,15 @@
     <footer>
         <p>This is a footer</p>
     </footer>
-
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
 </body>
 
 </html>
