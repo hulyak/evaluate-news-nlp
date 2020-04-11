@@ -20,8 +20,9 @@
 
     <main>
         <section>
-            <form class="" onsubmit="return handleSubmit(event)">
-                <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
+            <form class="search" onsubmit="return handleSubmit(event)">
+                <label for="">News and Sentence</label>
+                <input id="sentence" type="text" name="input" value="" onblur="onBlur()" placeholder="Type a sentence">
                 <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)"
                     onsubmit="return handleSubmit(event)">
             </form>
@@ -30,11 +31,12 @@
                 <section>
                     <strong>Form Results:</strong>
                     <div id="results"></div>
+                    <ul class="news-list"></ul>
                 </section>
     </main>
 
     <footer>
-        <p>This is a footer</p>
+        <p>2020</p>
     </footer>
     <script>
         // Check that service workers are supported
