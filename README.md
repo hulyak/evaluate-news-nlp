@@ -34,7 +34,11 @@ To run the server in production mode, run:
 ```bash
 npm run start
 ```
-_Udacity FEND PROJECT
+```
+npm run build-prod 
+```
+
+##Udacity FEND PROJECT
 
 
 
