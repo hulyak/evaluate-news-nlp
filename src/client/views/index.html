@@ -21,8 +21,8 @@
     <main>
         <section class="search">
             <form class="" onsubmit="return handleSubmit(event)">
-                <label for="url">Search For A URL </label>
-                <input id="url" type="url" name="test-url" value="" onblur="checkForUrl(str)"
+                <label for="url">Search For an Article URL </label>
+                <input id="url" type="url" name="test-url" value="" onblur="Client.checkForUrl()"
                     placeholder="Please enter a url for an article." pattern="https?://.+" required>
                 <input type="submit" class="btn" value="submit" onclick="return Client.handleSubmit(event)"
                     onsubmit="return handleSubmit(event)">
@@ -33,7 +33,7 @@
         <section>
             <div class="results"></div>
             <ul class="news-list">
-            <h2>Form Results:</h2>
+            <h2>Form Results</h2>
 
                 <li>
                     <h4>Text polarity:</h4>
@@ -42,7 +42,7 @@
                     <p id="polConfidence"></p>
                 </li>
                 <li>
-                    <h4>Subjectivity</h4>
+                    <h4>Subjectivity:</h4>
                     <p id="subjectivity"></p>
                     <h4>Confidence:</h4>
                     <p id="subConfidence"></p>

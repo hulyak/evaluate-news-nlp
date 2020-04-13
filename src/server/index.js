@@ -44,7 +44,7 @@ var textapi = new aylien({
 
 
 //Post request 
-app.post('/sentiment', function (req, res) {
+app.post('/sentiment-analysis', function (req, res) {
     textapi.sentiment({
         'url': req.body.url
     }, function (error, response) {
