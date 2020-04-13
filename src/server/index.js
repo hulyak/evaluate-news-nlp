@@ -16,16 +16,12 @@ app.use(bodyParser.json());
 const cors = require('cors');
 app.use(cors());
 
-// Setup empty JS object to act as endpoint for all routes
-projectData = {};
-
 app.use(express.static('dist'))
 
 console.log(__dirname)
 
 app.get('/', function (req, res) {
-    // res.sendFile('dist/index.html')
-    res.sendFile(path.resolve('src/client/views/index.html'))
+    // res.sendFile(path.resolve('src/client/views/index.html'))
     res.sendFile('dist/index.html')
 })
 
@@ -39,17 +35,18 @@ app.get('/test', function (req, res) {
 })
 
 // set aylien API credentials
-const aylien = require("aylien_textapi");
-const textapi = new aylien({
+var aylien = require("aylien_textapi");
+var textapi = new aylien({
     application_id: process.env.API_ID,
     application_key: process.env.API_KEY
 });
 // console.log(`Your API key is ${process.env.API_KEY}`);
 
-//Get request 
-app.get('/test', function (req, res) {
+
+//Post request 
+app.post('/sentiment', function (req, res) {
     textapi.sentiment({
-        'text': projectData.sentence,
+        'url': req.body.url
     }, function (error, response) {
         if (error === null) {
             console.log(response)
@@ -58,11 +55,4 @@ app.get('/test', function (req, res) {
     });
 });
 
-
-// POST method route
-app.post('/add', addInfo);
-
-function addInfo(req, res) {
-    projectData.sentence = req.body.sentence;
-    res.send(projectData);
-}
+module.exports = app;

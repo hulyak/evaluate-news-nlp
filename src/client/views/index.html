@@ -19,20 +19,42 @@
     </header>
 
     <main>
-        <section>
-            <form class="search" onsubmit="return handleSubmit(event)">
-                <label for="">News and Sentence</label>
-                <input id="sentence" type="text" name="input" value="" onblur="onBlur()" placeholder="Type a sentence">
-                <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)"
+        <section class="search">
+            <form class="" onsubmit="return handleSubmit(event)">
+                <label for="url">Search For A URL </label>
+                <input id="url" type="url" name="test-url" value="" onblur="checkForUrl(str)"
+                    placeholder="Please enter a url for an article." pattern="https?://.+" required>
+                <input type="submit" class="btn" value="submit" onclick="return Client.handleSubmit(event)"
                     onsubmit="return handleSubmit(event)">
             </form>
-            <section>
+        </section>
 
-                <section>
-                    <strong>Form Results:</strong>
-                    <div id="results"></div>
-                    <ul class="news-list"></ul>
-                </section>
+
+        <section>
+            <div class="results"></div>
+            <ul class="news-list">
+            <h2>Form Results:</h2>
+
+                <li>
+                    <h4>Text polarity:</h4>
+                    <p id="polarity"></p>
+                    <h4>Confidence:</h4>
+                    <p id="polConfidence"></p>
+                </li>
+                <li>
+                    <h4>Subjectivity</h4>
+                    <p id="subjectivity"></p>
+                    <h4>Confidence:</h4>
+                    <p id="subConfidence"></p>
+                </li>
+                <li>
+                    <h4>Text</h4>
+                    <p id="text"></p>
+                </li>
+            </ul>
+
+        </section>
+
     </main>
 
     <footer>
