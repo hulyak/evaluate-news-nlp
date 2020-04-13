@@ -26,13 +26,13 @@ Get the SDK.(Software Develeopment Kit). This project uses JavaScript SDK. You c
 ## Development
 To create an optimized front-end build for development, run:
 ```bash
-npm run build
+npm run build-dev
 ```
 
 ## Deployment
 To run the server in production mode, run:
 ```bash
-npm run start
+npm start
 ```
 ```
 npm run build-prod 
