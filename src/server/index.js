@@ -49,11 +49,11 @@ app.post('/sentiment-analysis', function (req, res) {
     textapi.sentiment({
         'url': req.body.url
     }, function (error, response) {
-        if (error === null) {
-            console.log(response)
-            res.send(response)
-        }
+        // if (error === null) {
+        // console.log(response)
+        res.send(response)
     });
 });
+// });
 
 module.exports = app;
