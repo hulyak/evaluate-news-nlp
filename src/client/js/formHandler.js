@@ -13,50 +13,45 @@ function handleSubmit(event) {
         }).then(function (data) {
             updateUI(data);
         });
-    } else {
-        formUrl.innerHTML = 'Please enter a valid url';
         return false;
     }
-    return false;
-}
-// function validate() {
-//     var url = document.getElementById("url").value;
+    // function validate() {
+    //     var url = document.getElementById("url").value;
 
-//     if (pattern.test(url)) {
-//         alert("Url is valid");
-//         return true;
-//     }
-//         alert("Url is not valid!");
-//         return false;
-// }
+    //     if (pattern.test(url)) {
+    //         alert("Url is valid");
+    //         return true;
+    //     }
+    //         alert("Url is not valid!");
+    //         return false;
+    // }
 
-const postData = async (url = '', data = {}) => {
-    const response = await fetch(url, {
-        method: 'POST',
-        credentials: 'same-origin',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data) // body data type must match "Content-Type" header
-    });
-};
-try {
-    const data = response.json();
-    console.log('data received from server');
-    return postData;
-} catch (error) {
-    console.log('error', error);
-}
+    const postData = async (url = '', data = {}) => {
+        const response = await fetch(url, {
+            method: 'POST',
+            credentials: 'same-origin',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data) // body data type must match "Content-Type" header
+        });
 
+        try {
+            const data = response.json();
+            return postData;
+        } catch (error) {
+            console.log('error', error);
+        }
 
-const updateUI = async (input) => {
-    document.getElementById('polarity').innerHTML = input.polarity;
-    document.getElementById('polConfidence').innerHTML = input.polConfidence;
-    document.getElementById('subjectivity').innerHTML = input.subjectivity;
-    document.getElementById('subConfidence').innerHTML = input.subConfidence;
-    document.getElementById('text').innerHTML = input.text;
-};
+    }
+    const updateUI = async (input) => {
+        document.getElementById('polarity').innerHTML = input.polarity;
+        document.getElementById('polConfidence').innerHTML = input.polConfidence;
+        document.getElementById('subjectivity').innerHTML = input.subjectivity;
+        document.getElementById('subConfidence').innerHTML = input.subConfidence;
+        document.getElementById('text').innerHTML = input.text;
+    };
 
-export {
-    handleSubmit
-}
+    export {
+        handleSubmit
+    }

@@ -30,8 +30,9 @@ console.log(__dirname)
 
 app.get('/', function (req, res) {
     // res.sendFile(path.resolve('src/client/views/index.html'))
-    res.sendFile('dist/index.html')
-})
+    res.sendFile('dist/index.html');
+    path.join(__dirname + 'dist/index.html');
+});
 
 // designates what port the app will listen to for incoming requests
 app.listen(8081, function () {
