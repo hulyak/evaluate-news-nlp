@@ -14,7 +14,7 @@ function handleSubmit(event) {
             updateUI(data);
         });
         return true;
-    }
+
     const postData = async (url = '', data = {}) => {
         const response = await fetch(url, {
             method: 'POST',
