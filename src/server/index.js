@@ -57,5 +57,4 @@ app.post('/sentiment', function (req, res) {
     });
 });
 
-
 module.exports = app;
