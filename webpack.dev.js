@@ -6,6 +6,7 @@ const {
 } = require('clean-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
+
 module.exports = {
     entry: './src/client/index.js',
     mode: 'development',
@@ -44,6 +45,6 @@ module.exports = {
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false
         }),
-        new BundleAnalyzerPlugin()
+        new BundleAnalyzerPlugin(),
     ]
 }

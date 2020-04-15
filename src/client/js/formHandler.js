@@ -8,12 +8,12 @@ function handleSubmit(event) {
     let formUrl = document.getElementById('url').value;
     const checkUrl = Client.checkForUrl(formUrl);
     if (checkUrl) {
-        postData('http://localhost:8080/sentiment-analysis', {
+        postData('http://localhost:8080/sentiment', {
             url: formUrl
         }).then(function (data) {
             updateUI(data);
         });
-        return false;
+        return true;
     }
     // function validate() {
     //     var url = document.getElementById("url").value;
@@ -37,13 +37,13 @@ function handleSubmit(event) {
         });
 
         try {
-            const data = response.json();
+            const input = response.json();
             return postData;
         } catch (error) {
             console.log('error', error);
         }
 
-    }
+    };
     const updateUI = async (input) => {
         document.getElementById('polarity').innerHTML = input.polarity;
         document.getElementById('polConfidence').innerHTML = input.polConfidence;

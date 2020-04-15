@@ -44,7 +44,7 @@ app.get('/test', function (req, res) {
 })
 
 //Post request 
-app.post('/sentiment-analysis', function (req, res) {
+app.post('/sentiment', function (req, res) {
     textapi.sentiment({
         'url': req.body.url
     }, function (error, response) {
