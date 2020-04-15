@@ -26,7 +26,7 @@ function handleSubmit(event) {
         });
 
         try {
-            const input = await response.json();
+            const someData = await response.json();
             return postData;
         } catch (error) {
             console.log('error', error);
