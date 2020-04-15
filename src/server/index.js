@@ -13,7 +13,7 @@ var textapi = new aylien({
 });
 console.log(`Your API key is ${process.env.API_KEY}`);
 
-const app = express()
+const app = express();
 //Middleware
 app.use(bodyParser.urlencoded({
     extended: false
@@ -31,7 +31,7 @@ console.log(__dirname)
 app.get('/', function (req, res) {
     // res.sendFile(path.resolve('src/client/views/index.html'))
     res.sendFile('dist/index.html');
-    path.join(__dirname + 'dist/index.html');
+    // path.join(__dirname + 'dist/index.html');
 });
 
 // designates what port the app will listen to for incoming requests
@@ -51,8 +51,9 @@ app.post('/sentiment', function (req, res) {
         if (error === null) {
             console.log(response);
             res.send(response);
-            return;
+            // return;
         };
+
     });
 });
 

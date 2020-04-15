@@ -1,6 +1,6 @@
 import {
     handleSubmit
-} from "./js/formHandler";
+} from "./formHandler";
 
 describe('handleSubmit', () => {
     test('handleSubmit function should be defined', () => {

@@ -14,7 +14,7 @@ function handleSubmit(event) {
             updateUI(data);
         });
         return true;
-
+    }
     const postData = async (url = '', data = {}) => {
         const response = await fetch(url, {
             method: 'POST',
@@ -26,14 +26,12 @@ function handleSubmit(event) {
         });
 
         try {
-            const input = response.json();
+            const input = await response.json();
             return postData;
         } catch (error) {
             console.log('error', error);
         }
-
-    }
-
+    };
     const updateUI = async (input) => {
         document.getElementById('polarity').innerHTML = input.polarity;
         document.getElementById('polConfidence').innerHTML = input.polConfidence;
@@ -41,8 +39,8 @@ function handleSubmit(event) {
         document.getElementById('subConfidence').innerHTML = input.subConfidence;
         document.getElementById('text').innerHTML = input.text;
     };
-
 }
+
 export {
     handleSubmit
 }
