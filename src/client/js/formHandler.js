@@ -8,24 +8,13 @@ function handleSubmit(event) {
     let formUrl = document.getElementById('url').value;
     const checkUrl = Client.checkForUrl(formUrl);
     if (checkUrl) {
-        postData('http://localhost:8080/sentiment', {
+        postData('http://localhost:8081/sentiment', {
             url: formUrl
         }).then(function (data) {
             updateUI(data);
         });
         return true;
     }
-    // function validate() {
-    //     var url = document.getElementById("url").value;
-
-    //     if (pattern.test(url)) {
-    //         alert("Url is valid");
-    //         return true;
-    //     }
-    //         alert("Url is not valid!");
-    //         return false;
-    // }
-
     const postData = async (url = '', data = {}) => {
         const response = await fetch(url, {
             method: 'POST',
@@ -43,7 +32,8 @@ function handleSubmit(event) {
             console.log('error', error);
         }
 
-    };
+    }
+
     const updateUI = async (input) => {
         document.getElementById('polarity').innerHTML = input.polarity;
         document.getElementById('polConfidence').innerHTML = input.polConfidence;
@@ -52,6 +42,7 @@ function handleSubmit(event) {
         document.getElementById('text').innerHTML = input.text;
     };
 
-    export {
-        handleSubmit
-    }
+}
+export {
+    handleSubmit
+}
