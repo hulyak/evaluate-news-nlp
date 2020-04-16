@@ -13,7 +13,7 @@ function handleSubmit(event) {
         }).then(function (data) {
             updateUI(data);
         });
-        return true;
+        return false;
     }
 }
 const postData = async (url = '', data = {}) => {
@@ -28,16 +28,16 @@ const postData = async (url = '', data = {}) => {
 
     try {
         const someData = await response.json();
-        return postData;
+        return someData;
     } catch (error) {
         console.log('error', error);
     }
 }
 const updateUI = async (input) => {
     document.getElementById('polarity').innerHTML = input.polarity;
-    document.getElementById('polConfidence').innerHTML = input.polConfidence;
+    document.getElementById('polarity_confidence').innerHTML = input.polarity_confidence;
     document.getElementById('subjectivity').innerHTML = input.subjectivity;
-    document.getElementById('subConfidence').innerHTML = input.subConfidence;
+    document.getElementById('subjectivity_confidence').innerHTML = input.subjectivity_confidence;
     document.getElementById('text').innerHTML = input.text;
 };
 
