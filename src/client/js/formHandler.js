@@ -38,7 +38,7 @@ const updateUI = async (input) => {
     document.getElementById('polarity_confidence').innerHTML = input.polarity_confidence;
     document.getElementById('subjectivity').innerHTML = input.subjectivity;
     document.getElementById('subjectivity_confidence').innerHTML = input.subjectivity_confidence;
-    document.getElementById('text').innerHTML = input.text;
+    document.getElementById('text').innerHTML = input.text.substring(0,100);
 };
 
 
