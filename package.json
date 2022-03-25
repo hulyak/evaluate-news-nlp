@@ -6,7 +6,9 @@
     "test": "jest",
     "start": "node src/server/index.js",
     "build-prod": "webpack --config webpack.prod.js",
-    "build-dev": "webpack-dev-server  --config webpack.dev.js --open"
+    "build-dev": "webpack-dev-server  --config webpack.dev.js --open",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "keywords": [],
   "author": "",
@@ -24,7 +26,8 @@
     "optimize-css-assets-webpack-plugin": "^5.0.4",
     "terser-webpack-plugin": "^2.3.8",
     "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^3.3.12",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -40,5 +43,6 @@
     "webpack-bundle-analyzer": "^3.6.1",
     "webpack-dev-server": "^3.11.0",
     "workbox-webpack-plugin": "^5.1.2"
-  }
+  },
+  "snyk": true
 }
